@@ -43,6 +43,9 @@ module.exports = async function(userOptions, isWatch) {
     log('Using ' + options.configFile + ' as Tailwind config file');
   }
 
+  log('Looking for files that match:')
+  log(options.src)
+
   const filePaths = await fg(options.src, {
     ignore: [
       options.dest,
