@@ -42,6 +42,12 @@ module.exports = async function(userOptions, isWatch) {
   } else {
     log('Using ' + options.configFile + ' as Tailwind config file');
   }
+  log('Contents of css dir:')
+  log( await fg('./css/*'))
+
+
+  log('Searching for files with glob patterns:')
+  log(options.src)
 
   const filePaths = await fg(options.src, {
     ignore: [
@@ -51,8 +57,6 @@ module.exports = async function(userOptions, isWatch) {
     ]
   });
 
-  log('Contents of css dir:')
-  log( await fg('./css/*'))
 
   log('Matched ' + filePaths.length + ' file paths:');
   log(filePaths)
