@@ -58,7 +58,7 @@ module.exports = async function(userOptions, isWatch) {
     ignore: [
       options.dest,
       ...options.excludeNodeModules ? ['node_modules/**/*'] : [],
-      //...options.excludeNonCssFiles ? ['**/!(*.css)'] : []
+      ...options.excludeNonCssFiles ? ['**/!(*.css)'] : []
     ]
   });
 
