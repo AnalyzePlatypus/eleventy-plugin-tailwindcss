@@ -43,12 +43,6 @@ module.exports = async function(userOptions, isWatch) {
     log('Using ' + options.configFile + ' as Tailwind config file');
   }
 
-  log('inputDir:')
-  log(inputDir)
-
-  log('Looking for files that match:')
-  log(options.src)
-
   const filePaths = await fg(options.src, {
     ignore: [
       options.dest,
@@ -56,6 +50,9 @@ module.exports = async function(userOptions, isWatch) {
       ...options.excludeNonCssFiles ? ['**/!(*.css)'] : []
     ]
   });
+
+  log('Contents of css dir:')
+  log( await fg('./css/*'))
 
   log('Matched ' + filePaths.length + ' file paths:');
   log(filePaths)
