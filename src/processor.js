@@ -45,6 +45,8 @@ module.exports = async function(userOptions, isWatch) {
   log('Contents of css dir:')
   log( await fg('./css/*'))
 
+  log('Files in /css that are flagged as not CSS')
+  log(await fg('./css/!(*.css)'))
 
   log('Searching for files with glob patterns:')
   log(options.src)
