@@ -51,6 +51,9 @@ module.exports = async function(userOptions, isWatch) {
     ]
   });
 
+  log('Matched ' + filePaths.length + ' file paths:');
+  log(filePaths)
+
   if (filePaths.length > 0) {
     await writer(filePaths, options);
 

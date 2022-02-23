@@ -33,7 +33,9 @@ module.exports = async function(filePaths, options) {
     };
 
     for (const src of filePaths) {
+      log('Processing file: ' + src);
       const dest = getDest(src);
+      
       let content = await readFile(src);
       content = (await postcss(postcssPlugins).process(content, {
         from: src,
