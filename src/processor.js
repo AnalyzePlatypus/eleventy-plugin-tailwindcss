@@ -57,7 +57,7 @@ module.exports = async function(userOptions, isWatch) {
   const filePaths = await fg(options.src, {
     ignore: [
       options.dest,
-      //...options.excludeNodeModules ? ['node_modules/**/*'] : [],
+      ...options.excludeNodeModules ? ['node_modules/**/*'] : [],
       //...options.excludeNonCssFiles ? ['**/!(*.css)'] : []
     ]
   });
